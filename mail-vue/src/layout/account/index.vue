@@ -585,6 +585,7 @@ path[fill="#ffdda1"] {
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+    border: 1px solid transparent;
 
     .account {
       font-weight: 600;
@@ -622,7 +623,8 @@ path[fill="#ffdda1"] {
   }
 
   .item-choose {
-    background: var(--choose-account-background);
+    background-color: var(--bg-main) !important;
+    border: 1px solid var(--border-color) !important;
   }
 }
 
