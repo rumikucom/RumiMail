@@ -6,7 +6,7 @@
     </div>
     <div v-perm="'email:send'" class="writer-box" @click="openSend">
       <div class="writer">
-        <Icon icon="material-symbols:edit-outline-sharp" width="22" height="22"/>
+        <Icon icon="material-symbols:edit-outline-sharp" width="20" height="20"/>
       </div>
     </div>
     <div class="toolbar">
@@ -255,34 +255,42 @@ function formatName(email) {
 }
 
 </script>
+
 <style>
 .detail-dropdown {
   color: var(--el-text-color-primary) !important;
 }
 </style>
+
 <style lang="scss" scoped>
 
 :deep(.el-popper.is-pure) {
-  border-radius: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .user-details {
-  width: 250px;
+  width: 280px;
   font-size: 14px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  padding: 8px 0;
+  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
 
   .user-name {
-    font-weight: bold;
+    font-weight: 600;
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    width: 250px;
+    width: 280px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
+    font-size: 15px;
+    letter-spacing: -0.01em;
   }
 
   .detail-user-type {
@@ -293,12 +301,16 @@ function formatName(email) {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    margin-top: 10px;
+    margin-top: 12px;
+    padding: 12px 20px 0 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 
     > div:first-child {
       display: grid;
       align-items: center;
       gap: 10px;
+      font-size: 13px;
+      color: var(--secondary-text-color);
     }
 
     > div:last-child {
@@ -316,41 +328,63 @@ function formatName(email) {
   .detail-email {
     padding-left: 20px;
     padding-right: 20px;
-    width: 250px;
+    width: 280px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
     color: var(--regular-text-color);
     cursor: pointer;
+    font-size: 13px;
+    margin-top: 2px;
+    transition: color 150ms ease;
+
+    &:hover {
+      color: #3E86F9;
+    }
   }
 
   .logout {
-    margin-top: 20px;
+    margin-top: 16px;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 0 16px 12px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 12px;
 
     .el-button {
       border-radius: 6px;
-      height: 28px;
+      height: 32px;
       width: 100%;
+      background: #041133;
+      border-color: #041133;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 13px;
+      transition: all 200ms ease;
+
+      &:hover {
+        background: #0a1d4a;
+        border-color: #0a1d4a;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
     }
   }
 
   .details-avatar {
     margin-top: 20px;
-    height: 40px;
-    width: 40px;
-    background: var(--el-bg-color);
-    color: var(--el-text-color-primary);
-    border: 1px solid var(--dark-border);
+    height: 44px;
+    width: 44px;
+    background: #3E86F9;
+    color: #ffffff;
     font-size: 18px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 12px;
   }
 }
 
@@ -362,6 +396,8 @@ function formatName(email) {
   height: 100%;
   gap: 10px;
   grid-template-columns: auto auto 1fr;
+  align-items: center;
+  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
 }
 
 .header.not-send {
@@ -373,23 +409,25 @@ function formatName(email) {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
+  margin-left: 8px;
 
   .writer {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: #ffffff;
-    background: linear-gradient(135deg, #1890ff, #3a80dd);
-    transition: all 0.3s ease;
+    background: #3E86F9;
+    transition: all 200ms ease;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .writer-text {
-      margin-left: 15px;
-      font-size: 14px;
-      font-weight: bold;;
+    &:hover {
+      box-shadow: 0 0 0 4px rgba(62, 134, 249, 0.15);
+    }
+
+    &:active {
+      transform: scale(0.94);
     }
   }
 }
@@ -402,31 +440,34 @@ function formatName(email) {
 }
 
 .breadcrumb-item {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 15px;
   color: var(--el-text-color-primary);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  letter-spacing: -0.01em;
 }
 
 .toolbar {
   display: flex;
   justify-content: end;
-  gap: 15px;
+  gap: 12px;
+  align-items: center;
   @media (max-width: 767px) {
-    gap: 10px;
+    gap: 8px;
   }
 
   .icon-item {
     align-self: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background 150ms ease;
   }
 
   .icon-item:hover {
@@ -434,33 +475,41 @@ function formatName(email) {
   }
 
   .notice {
-    font-size: 22px;
-    margin-right: 4px;
+    font-size: 20px;
+    margin-right: 2px;
   }
 
   .dark-icon {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .sun-icon {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .avatar {
     display: flex;
     align-items: center;
     cursor: pointer;
+    gap: 2px;
+    transition: opacity 150ms ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
 
     .avatar-text {
       background: var(--el-bg-color);
       color: var(--el-text-color-primary);
-      height: 30px;
-      width: 30px;
+      height: 32px;
+      width: 32px;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 8px;
-      border: 1px solid var(--dark-border);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .setting-icon {
@@ -468,6 +517,7 @@ function formatName(email) {
       top: 0;
       margin-right: 10px;
       bottom: 10px;
+      color: var(--secondary-text-color);
     }
   }
 
