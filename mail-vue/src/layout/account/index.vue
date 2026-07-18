@@ -518,8 +518,8 @@ path[fill="#ffdda1"] {
 <style scoped lang="scss">
 .account-box {
 
-  border-right: 1px solid var(--el-border-color) !important;
-  background-color: var(--bg-main);
+  border-right: 1px solid var(--border-color) !important;
+  background-color: var(--bg-card);
   height: 100%;
   overflow: hidden;
 
@@ -578,7 +578,7 @@ path[fill="#ffdda1"] {
   }
 
   .item {
-    background-color: var(--bg-card);
+    background-color: transparent !important;
     border-radius: 8px;
     padding: 12px 10px;
     margin-bottom: 10px;
@@ -623,7 +623,7 @@ path[fill="#ffdda1"] {
   }
 
   .item-choose {
-    background-color: var(--bg-main) !important;
+    background-color: transparent !important;
     border: 1px solid var(--border-color) !important;
   }
 }
