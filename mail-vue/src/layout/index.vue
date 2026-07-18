@@ -9,9 +9,9 @@
         :class="(uiStore.asideShow && isMobile)? 'overlay-show':'overlay-hide'"
         @click="uiStore.asideShow = false"
     ></div>
-    <el-container class="main-container">
+    <el-container class="main-container bg-[#F6F8FC] dark:bg-[#131314]">
       <el-main>
-        <el-header>
+        <el-header class="bg-[#FFFFFF] dark:bg-[#1E1F20] border-b border-[#E0E4EA] dark:border-[#414243]">
             <Header />
         </el-header>
         <Main />
@@ -91,7 +91,6 @@ onBeforeUnmount(() => {
 
 .main-container {
   min-height: 100%;
-  background: #F6F8FC;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -101,8 +100,6 @@ onBeforeUnmount(() => {
 }
 
 .el-header {
-  background: #FFFFFF;
-  border-bottom: solid 1px #E0E4EA;
   padding: 0 0 0 0;
 }
 

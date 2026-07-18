@@ -32,8 +32,11 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.5.4",
     "less": "^4.2.2",
+    "postcss": "^8.5.19",
     "sass": "^1.82.0",
+    "tailwindcss": "^4.3.3",
     "terser": "^5.39.0",
     "unplugin-auto-import": "^19.3.0",
     "unplugin-vue-components": "^28.7.0",

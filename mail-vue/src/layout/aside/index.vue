@@ -1,7 +1,7 @@
 <template>
-  <el-scrollbar class="scroll">
+  <el-scrollbar class="scroll bg-[#FFFFFF] dark:bg-[#1E1F20]">
     <div>
-      <div class="title">
+      <div class="title text-[#1F1F1F] dark:text-[#E3E3E3] border-b border-[#E0E4EA] dark:border-[#414243]">
         <Icon icon="material-symbols:mail-outline-rounded" width="24" height="24" style="color: #3E86F9" />
         <div>RumiMail</div>
       </div>
@@ -31,8 +31,8 @@
           <Icon icon="material-symbols:settings-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('settings')}}</span>
         </el-menu-item>
-        <div class="manage-divider"></div>
-        <div class="manage-title" v-perm="['all-email:query','user:query','role:query','setting:query','analysis:query','reg-key:query']">
+        <div class="manage-divider border-t border-[#E0E4EA] dark:border-[#414243]"></div>
+        <div class="manage-title text-[#5E5E5E] dark:text-[#9E9E9E]" v-perm="['all-email:query','user:query','role:query','setting:query','analysis:query','reg-key:query']">
           <div>{{$t('manage')}}</div>
         </div>
         <el-menu-item @click="router.push({name: 'analysis'})" index="analysis" v-perm="'analysis:query'"
@@ -88,12 +88,10 @@ const route = useRoute();
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #1F1F1F;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.02em;
   font-family: 'Inter', system-ui, sans-serif;
-  border-bottom: 1px solid #E0E4EA;
   margin-bottom: 8px;
 
   > div {
@@ -104,13 +102,11 @@ const route = useRoute();
 }
 
 .manage-divider {
-  border-top: 1px solid #E0E4EA;
   margin: 12px 12px 0 12px;
 }
 
 .manage-title {
   padding: 10px 16px 4px 16px;
-  color: #5E5E5E;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -125,25 +121,21 @@ const route = useRoute();
   display: flex;
   align-items: center;
   gap: 14px;
-  color: #1F1F1F !important;
+  @apply text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
   transition: all 150ms ease;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 14px;
 }
 
 .choose-item {
-  background: #C2E7FF !important;
-  color: #1F1F1F !important;
+  @apply bg-[#C2E7FF] dark:bg-[#004B73] text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
   font-weight: 600;
   position: relative;
 }
 
-
-
 @media (hover: hover) {
   .el-menu-item:hover {
-    background: #E8EAED !important;
-    color: #1F1F1F !important;
+    @apply bg-[#E8EAED] dark:bg-[#2D2E30] text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
   }
 }
 
@@ -153,7 +145,7 @@ const route = useRoute();
 }
 
 :deep(.el-scrollbar__wrap--hidden-default) {
-  background: #F6F8FC !important;
+  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] #{!important};
 }
 
 :deep(.el-menu-item) {
@@ -171,8 +163,7 @@ const route = useRoute();
 }
 
 :deep(.el-divider__text) {
-  background: #F6F8FC;
-  color: #1F1F1F;
+  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] text-[#1F1F1F] dark:text-[#E3E3E3];
 }
 
 :deep(.el-scrollbar__bar.is-vertical .el-scrollbar__thumb) {
@@ -184,6 +175,6 @@ const route = useRoute();
 }
 
 .scroll {
-  background: #F6F8FC;
+  @apply bg-[#FFFFFF] dark:bg-[#1E1F20];
 }
 </style>

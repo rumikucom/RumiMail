@@ -161,7 +161,7 @@ const handleResize = () => {
 
 
 .main-view {
-  background: var(--el-bg-color);
+  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] rounded-xl overflow-hidden;
 }
 
 
