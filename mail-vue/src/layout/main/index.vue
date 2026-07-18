@@ -2,7 +2,7 @@
   <div :class="accountShow && hasPerm('account:query') ? 'main-box-show' : 'main-box-hide'">
     <div :class="accountShow && hasPerm('account:query') ? 'block-show' : 'block-hide'" @click="uiStore.accountShow = false"></div>
     <account  :class="accountShow && hasPerm('account:query') ? 'show' : 'hide'" />
-    <router-view class="main-view" v-slot="{ Component,route }">
+    <router-view class="main-view bg-[#FFFFFF] dark:bg-[#1E1F20] rounded-xl overflow-hidden" v-slot="{ Component,route }">
       <keep-alive :include="['email','all-email','send','sys-setting','star','user','role','analysis','reg-key','draft']">
         <component :is="Component" :key="route.name"/>
       </keep-alive>
@@ -160,9 +160,7 @@ const handleResize = () => {
 }
 
 
-.main-view {
-  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] rounded-xl overflow-hidden;
-}
+
 
 
 .navigation {

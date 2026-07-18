@@ -121,21 +121,34 @@ const route = useRoute();
   display: flex;
   align-items: center;
   gap: 14px;
-  @apply text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
+  color: #1F1F1F !important;
+  .dark & {
+    color: #E3E3E3 !important;
+  }
   transition: all 150ms ease;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 14px;
 }
 
 .choose-item {
-  @apply bg-[#C2E7FF] dark:bg-[#004B73] text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
+  background: #C2E7FF !important;
+  color: #1F1F1F !important;
+  .dark & {
+    background: #004B73 !important;
+    color: #E3E3E3 !important;
+  }
   font-weight: 600;
   position: relative;
 }
 
 @media (hover: hover) {
   .el-menu-item:hover {
-    @apply bg-[#E8EAED] dark:bg-[#2D2E30] text-[#1F1F1F] dark:text-[#E3E3E3] #{!important};
+    background: #E8EAED !important;
+    color: #1F1F1F !important;
+    .dark & {
+      background: #2D2E30 !important;
+      color: #E3E3E3 !important;
+    }
   }
 }
 
@@ -145,7 +158,10 @@ const route = useRoute();
 }
 
 :deep(.el-scrollbar__wrap--hidden-default) {
-  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] #{!important};
+  background: #FFFFFF !important;
+  .dark & {
+    background: #1E1F20 !important;
+  }
 }
 
 :deep(.el-menu-item) {
@@ -163,7 +179,12 @@ const route = useRoute();
 }
 
 :deep(.el-divider__text) {
-  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] text-[#1F1F1F] dark:text-[#E3E3E3];
+  background: #FFFFFF;
+  color: #1F1F1F;
+  .dark & {
+    background: #1E1F20;
+    color: #E3E3E3;
+  }
 }
 
 :deep(.el-scrollbar__bar.is-vertical .el-scrollbar__thumb) {
@@ -175,6 +196,9 @@ const route = useRoute();
 }
 
 .scroll {
-  @apply bg-[#FFFFFF] dark:bg-[#1E1F20];
+  background: #FFFFFF;
+  .dark & {
+    background: #1E1F20;
+  }
 }
 </style>
