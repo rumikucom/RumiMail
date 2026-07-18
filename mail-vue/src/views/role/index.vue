@@ -1,8 +1,8 @@
 <template>
   <div class="perm-box">
     <div class="header-actions">
-      <Icon class="icon" icon="ion:add-outline" width="23" height="23" @click="openAddRole"/>
-      <Icon class="icon" icon="ion:reload" width="18" height="18" @click="refresh"/>
+      <Icon class="icon" icon="material-symbols:add-rounded" width="23" height="23" @click="openAddRole"/>
+      <Icon class="icon" icon="material-symbols:refresh-rounded" width="18" height="18" @click="refresh"/>
     </div>
     <el-scrollbar class="perm-scrollbar">
       <div class="loading" :class="tableLoading ? 'loading-show' : 'loading-hide'"
@@ -56,7 +56,7 @@
             placement="bottom"
         >
           <template #reference>
-            <Icon class="warning" icon="fe:warning" width="18" height="18"/>
+            <Icon class="warning" icon="material-symbols:warning-outline-rounded" width="18" height="18"/>
           </template>
           <div style="font-weight: bold;;margin-bottom: 2px;">{{ t('emailInterception') }}</div>
           <div>{{ t('emailInterceptionDesc') }}</div>

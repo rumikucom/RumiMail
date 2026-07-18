@@ -6,25 +6,25 @@
     </div>
     <div v-perm="'email:send'" class="writer-box" @click="openSend">
       <div class="writer">
-        <Icon icon="material-symbols:edit-outline-sharp" width="20" height="20"/>
+        <Icon icon="material-symbols:edit-outline-rounded" width="20" height="20"/>
       </div>
     </div>
     <div class="toolbar">
       <div v-if="uiStore.dark" class="sun-icon icon-item" @click="openDark($event)">
-        <Icon icon="mingcute:sun-fill"/>
+        <Icon icon="material-symbols:light-mode-outline-rounded"/>
       </div>
       <div v-else class="dark-icon icon-item" @click="openDark($event)">
-        <Icon icon="solar:moon-linear"/>
+        <Icon icon="material-symbols:dark-mode-outline-rounded"/>
       </div>
       <div class="notice icon-item" @click="openNotice">
-        <Icon icon="streamline-plump:announcement-megaphone"/>
+        <Icon icon="material-symbols:notifications-outline-rounded"/>
       </div>
       <el-dropdown ref="userinfoRef" @visible-change="e => userInfoShow = e" :teleported="false" popper-class="detail-dropdown">
         <div class="avatar" @click="userInfoHide" >
           <div class="avatar-text">
             <div>{{ formatName(userStore.user.email) }}</div>
           </div>
-          <Icon class="setting-icon" icon="mingcute:down-small-fill" width="24" height="24"/>
+          <Icon class="setting-icon" icon="material-symbols:expand-more-rounded" width="24" height="24"/>
         </div>
         <template #dropdown>
           <div class="user-details">

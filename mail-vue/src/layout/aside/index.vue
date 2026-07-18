@@ -2,33 +2,33 @@
   <el-scrollbar class="scroll">
     <div>
       <div class="title">
-        <Icon icon="mdi:email-outline" width="24" height="24" style="color: #3E86F9" />
+        <Icon icon="material-symbols:mail-outline-rounded" width="24" height="24" style="color: #3E86F9" />
         <div>RumiMail</div>
       </div>
       <el-menu :collapse="false" text-color="#fff" active-text-color="#fff">
         <el-menu-item @click="router.push({name: 'email'})" index="email"
                       :class="route.meta.name === 'email' ? 'choose-item' : ''">
-          <Icon icon="hugeicons:mailbox-01" width="20" height="20" />
+          <Icon icon="material-symbols:inbox-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('inbox')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'send'})" index="send" v-perm="'email:send'"
                       :class="route.meta.name === 'send' ? 'choose-item' : ''">
-          <Icon icon="cil:send" width="20" height="20" />
+          <Icon icon="material-symbols:send-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('sent')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'draft'})" index="draft" v-perm="'email:send'"
                       :class="route.meta.name === 'draft' ? 'choose-item' : ''">
-          <Icon icon="ep:document" width="19" height="19" />
+          <Icon icon="material-symbols:draft-outline-rounded" width="19" height="19" />
           <span class="menu-name">{{$t('drafts')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'star'})" index="star"
                       :class="route.meta.name === 'star' ? 'choose-item' : ''">
-          <Icon icon="solar:star-line-duotone" width="20" height="20" />
+          <Icon icon="material-symbols:star-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('starred')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'setting'})" index="setting"
                       :class="route.meta.name === 'setting' ? 'choose-item' : ''">
-          <Icon icon="fluent:settings-48-regular" width="20" height="20" />
+          <Icon icon="material-symbols:settings-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('settings')}}</span>
         </el-menu-item>
         <div class="manage-divider"></div>
@@ -37,32 +37,32 @@
         </div>
         <el-menu-item @click="router.push({name: 'analysis'})" index="analysis" v-perm="'analysis:query'"
                       :class="route.meta.name === 'analysis' ? 'choose-item' : ''">
-          <Icon icon="fluent:data-pie-20-regular" width="24" height="24" />
+          <Icon icon="material-symbols:analytics-outline-rounded" width="24" height="24" />
           <span class="menu-name">{{$t('analytics')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'user'})" index="setting" v-perm="'user:query'"
                       :class="route.meta.name === 'user' ? 'choose-item' : ''">
-          <Icon icon="si:user-alt-2-line" width="20" height="20" />
+          <Icon icon="material-symbols:group-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('allUsers')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'all-email'})" index="all-email" v-perm="'all-email:query'"
                       :class="route.meta.name === 'all-email' ? 'choose-item' : ''">
-          <Icon icon="fluent:mail-list-28-regular" width="22" height="22" />
+          <Icon icon="material-symbols:mark-email-read-outline-rounded" width="22" height="22" />
           <span class="menu-name">{{$t('allMail')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'role'})" index="setting" v-perm="'role:query'"
                       :class="route.meta.name === 'role' ? 'choose-item' : ''">
-          <Icon icon="fluent:lock-closed-16-regular" width="22" height="22" />
+          <Icon icon="material-symbols:admin-panel-settings-outline-rounded" width="22" height="22" />
           <span class="menu-name">{{$t('permissions')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'reg-key'})" index="reg-key" v-perm="'reg-key:query'"
                       :class="route.meta.name === 'reg-key' ? 'choose-item' : ''">
-          <Icon icon="fluent:fingerprint-20-filled" width="22" height="22" />
+          <Icon icon="material-symbols:vpn-key-outline-rounded" width="22" height="22" />
           <span class="menu-name">{{$t('inviteCode')}}</span>
         </el-menu-item>
         <el-menu-item @click="router.push({name: 'sys-setting'})" index="sys-setting" v-perm="'setting:query'"
                       :class="route.meta.name === 'sys-setting' ? 'choose-item' : ''">
-          <Icon icon="eos-icons:system-ok-outlined" width="18" height="18" />
+          <Icon icon="material-symbols:tune-rounded" width="18" height="18" />
           <span class="menu-name">{{$t('SystemSettings')}}</span>
         </el-menu-item>
       </el-menu>

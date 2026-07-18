@@ -11,18 +11,18 @@
       <div class="header-left" :style="'padding-left:' + actionLeft">
 
         <slot name="first"></slot>
-        <Icon class="icon reload" icon="ion:reload" width="18" height="18" @click="refresh"/>
-        <Icon v-perm="'email:delete'" class="icon delete" icon="uiw:delete" width="16" height="16"
+        <Icon class="icon reload" icon="material-symbols:refresh-rounded" width="18" height="18" @click="refresh"/>
+        <Icon v-perm="'email:delete'" class="icon delete" icon="material-symbols:delete-outline-rounded" width="16" height="16"
               v-if="getSelectedMailsIds().length > 0"
               @click="handleDelete"/>
-        <Icon v-perm="'email:delete'" class="icon delete" icon="fluent:mail-read-20-regular" width="21" height="21"
+        <Icon v-perm="'email:delete'" class="icon delete" icon="material-symbols:mark-email-read-outline-rounded" width="21" height="21"
               v-if="getSelectedMailsIds().length > 0 && showUnread"
               @click="handleRead"/>
       </div>
 
       <div class="header-right">
         <span class="email-count" v-if="total">{{ $t('emailCount', {total: total}) }}</span>
-        <Icon v-if="showAccountIcon" class="more-icon icon" width="16" height="16" icon="akar-icons:dot-grid-fill"
+        <Icon v-if="showAccountIcon" class="more-icon icon" width="16" height="16" icon="material-symbols:grid-view-outline-rounded"
               @click="changeAccountShow"/>
       </div>
     </div>
@@ -49,8 +49,8 @@
               <el-checkbox :class=" props.type === 'all-email' ? 'all-email-checkbox' : 'checkbox'"
                            v-model="item.checked" @click.stop></el-checkbox>
               <div @click.stop="starChange(item)" class="pc-star" v-if="showStar">
-                <Icon v-if="item.isStar" icon="fluent-color:star-16" width="20" height="20"/>
-                <Icon v-else icon="solar:star-line-duotone" width="18" height="18"/>
+                <Icon v-if="item.isStar" icon="material-symbols:star-rounded" width="20" height="20"/>
+                <Icon v-else icon="material-symbols:star-outline-rounded" width="18" height="18"/>
               </div>
               <div v-if="!showStar"></div>
               <div class="title" :class="accountShow ? 'title-column' : 'title-column'">
@@ -62,7 +62,7 @@
                     </el-tooltip>
                     <div class="del-status" v-if="item.isDel">
                       <el-tooltip effect="dark" :content="item.isDelContent">
-                        <Icon class="icon" icon="mdi:email-remove" width="20" height="20"/>
+                        <Icon class="icon" icon="material-symbols:cancel-schedule-send-outline-rounded" width="20" height="20"/>
                       </el-tooltip>
                     </div>
                   </div>
@@ -73,7 +73,7 @@
                       <slot name="name" :email="item"> {{ item.name }}</slot>
                     </span>
                     <span>
-                      <Icon v-if="item.isStar" icon="fluent-color:star-16" width="18" height="18"/>
+                      <Icon v-if="item.isStar" icon="material-symbols:star-rounded" width="18" height="18"/>
                     </span>
                   </span>
                   <span class="phone-time">{{ item.formatCreateTime }}</span>
@@ -94,13 +94,13 @@
                   <div class="user-info" v-if="showUserInfo">
                     <div class="user">
                       <span>
-                        <Icon icon="mynaui:user" width="20" height="20"/>
+                        <Icon icon="material-symbols:person-outline-rounded" width="20" height="20"/>
                       </span>
                       <span>{{ item.userEmail }}</span>
                     </div>
                     <div class="account">
                       <span>
-                        <Icon icon="mdi-light:email" width="20" height="20"/>
+                        <Icon icon="material-symbols:mail-outline-rounded" width="20" height="20"/>
                       </span>
                       <span>{{ item.type === 0 ? item.toEmail : item.sendEmail }}</span>
                     </div>
@@ -158,7 +158,7 @@
           <el-dropdown-item v-if="rightClickEmail.code" @click="copyCode(rightClickEmail.code)" >
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="fluent-color:clipboard-24" width="20" height="20" />
+                <Icon icon="material-symbols:content-copy-outline-rounded" width="20" height="20" />
                 <span>{{t('copyCode')}}</span>
               </div>
             </template>
@@ -166,7 +166,7 @@
           <el-dropdown-item v-if="['email'].includes(props.type)" @click="emailRead(rightClickEmail.emailId)" >
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="fluent:mail-read-20-regular" width="20" height="20" />
+                <Icon icon="material-symbols:mark-email-read-outline-rounded" width="20" height="20" />
                 <span>{{t('markAsRead')}}</span>
               </div>
             </template>
@@ -174,7 +174,7 @@
           <el-dropdown-item v-if="['email','star'].includes(props.type)" @click="openReply(rightClickEmail)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="la:reply" width="20" height="20"  />
+                <Icon icon="material-symbols:reply-rounded" width="20" height="20"  />
                 <span>{{t('reply')}}</span>
               </div>
             </template>
@@ -182,7 +182,7 @@
           <el-dropdown-item v-if="['email','send', 'star'].includes(props.type)" @click="openForward(rightClickEmail)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="iconoir:arrow-up-right" width="19" height="19"  />
+                <Icon icon="material-symbols:forward-outline-rounded" width="19" height="19"  />
                 <span>{{t('forward')}}</span>
               </div>
             </template>
@@ -190,7 +190,7 @@
           <el-dropdown-item v-if="['email','send', 'star'].includes(props.type)" @click="starChange(rightClickEmail)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="solar:star-line-duotone" width="19" height="19"/>
+                <Icon icon="material-symbols:star-outline-rounded" width="19" height="19"/>
                 <span>{{t('star')}}</span>
               </div>
             </template>
@@ -198,7 +198,7 @@
           <el-dropdown-item v-if="props.type === 'all-email'" @click="handleSearch('user', rightClickEmail.userEmail)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="iconoir:search" width="20" height="20" />
+                <Icon icon="material-symbols:search-rounded" width="20" height="20" />
                 <span>{{t('searchUser')}}</span>
               </div>
             </template>
@@ -206,7 +206,7 @@
           <el-dropdown-item v-if="props.type === 'all-email' " @click="handleSearch('account', rightClickEmail.toEmail)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="iconoir:search" width="20" height="20" />
+                <Icon icon="material-symbols:search-rounded" width="20" height="20" />
                 <span>{{t('searchEmail')}}</span>
               </div>
             </template>
@@ -214,7 +214,7 @@
           <el-dropdown-item v-if="props.type === 'all-email' " @click="handleSearch('name', rightClickEmail.name)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="iconoir:search" width="20" height="20" />
+                <Icon icon="material-symbols:search-rounded" width="20" height="20" />
                 <span>{{t('searchSender')}}</span>
               </div>
             </template>
@@ -222,7 +222,7 @@
           <el-dropdown-item @click="rightDelete(rightClickEmail.emailId)">
             <template #default>
               <div class="right-dropdown-item">
-                <Icon icon="uiw:delete" width="16" height="20" style="margin-left: 1px;margin-right: 3px" />
+                <Icon icon="material-symbols:delete-outline-rounded" width="16" height="20" style="margin-left: 1px;margin-right: 3px" />
                 <span>{{t('delete')}}</span>
               </div>
             </template>

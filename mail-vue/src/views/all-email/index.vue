@@ -39,7 +39,7 @@
               </el-select>
               <div class="search-type">
                 <span>{{ selectTitle }}</span>
-                <Icon class="setting-icon" icon="mingcute:down-small-fill" width="20" height="20"/>
+                <Icon class="setting-icon" icon="material-symbols:expand-more-rounded" width="20" height="20"/>
               </div>
             </div>
           </template>
@@ -51,12 +51,12 @@
           <el-option key="4" :label="$t('selectDeleted')" value="delete"/>
           <el-option key="4" :label="$t('noRecipientTitle')" value="noone"/>
         </el-select>
-        <Icon class="icon" icon="iconoir:search" @click="search" width="20" height="20"/>
-        <Icon class="icon" @click="changeTimeSort" icon="material-symbols-light:timer-arrow-down-outline"
+        <Icon class="icon" icon="material-symbols:search-rounded" @click="search" width="20" height="20"/>
+        <Icon class="icon" @click="changeTimeSort" icon="material-symbols:arrow-downward-rounded"
               v-if="params.timeSort === 0" width="28" height="28"/>
-        <Icon class="icon" @click="changeTimeSort" icon="material-symbols-light:timer-arrow-up-outline" v-else
+        <Icon class="icon" @click="changeTimeSort" icon="material-symbols:arrow-upward-rounded" v-else
               width="28" height="28"/>
-        <Icon class="icon clear" icon="fluent:broom-sparkle-16-regular" width="22" height="22" @click="openBathDelete"/>
+        <Icon class="icon clear" icon="material-symbols:delete-sweep-outline-rounded" width="22" height="22" @click="openBathDelete"/>
       </template>
     </emailScroll>
     <el-dialog v-model="showBathDelete" :title="$t('clearEmail')" width="335"

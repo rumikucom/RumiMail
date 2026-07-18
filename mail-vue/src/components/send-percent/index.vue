@@ -1,6 +1,6 @@
 <template>
   <div class="percent">
-    <Icon icon="line-md:loading-loop" width="18" height="18" />
+    <Icon icon="material-symbols:progress-activity" width="18" height="18" />
     <div>
       <span>{{value}}%</span>
       <span style="margin-left: 5px">{{desc}}</span>
