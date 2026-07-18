@@ -138,16 +138,7 @@ const route = useRoute();
   position: relative;
 }
 
-.choose-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 3px;
-  background: #1A73E8;
-  border-radius: 0 2px 2px 0;
-}
+
 
 @media (hover: hover) {
   .el-menu-item:hover {
