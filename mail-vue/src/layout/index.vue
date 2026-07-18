@@ -9,9 +9,9 @@
         :class="(uiStore.asideShow && isMobile)? 'overlay-show':'overlay-hide'"
         @click="uiStore.asideShow = false"
     ></div>
-    <el-container class="main-container bg-[#F6F8FC] dark:bg-[#131314]">
+    <el-container class="main-container bg-layout-main text-primary">
       <el-main>
-        <el-header class="bg-[#FFFFFF] dark:bg-[#1E1F20] border-b border-[#E0E4EA] dark:border-[#414243]">
+        <el-header class="bg-layout-card border-b border-[#E0E4EA] dark:border-[#414243]">
             <Header />
         </el-header>
         <Main />

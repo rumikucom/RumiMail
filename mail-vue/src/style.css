@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --color-layout-main: var(--bg-main);
+  --color-layout-card: var(--bg-card);
+  --color-primary: var(--text-main);
+  --color-secondary: var(--text-sub);
+  --color-active-pill: var(--active-pill);
+}
 * {
     margin: 0;
     padding: 0;
@@ -111,6 +118,12 @@ button, input, select, textarea {
 }
 
 :root {
+    --bg-main: #F6F8FC;
+    --bg-card: #FFFFFF;
+    --text-main: #1F1F1F;
+    --text-sub: #5E5E5E;
+    --active-pill: #C2E7FF;
+
     --el-color-primary: #1A73E8;
     --el-color-primary-dark-2: #1557B0;
     --el-color-primary-light-3: #4D9AEF;
@@ -148,6 +161,12 @@ button, input, select, textarea {
 }
 
 .dark {
+    --bg-main: #131314;
+    --bg-card: #1E1F20;
+    --text-main: #E3E3E3;
+    --text-sub: #9E9E9E;
+    --active-pill: #004B73;
+
     --extra-light-fill: #191919;
     --light-ill: #262727;
     --light-border: #414243;

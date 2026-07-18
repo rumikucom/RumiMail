@@ -263,6 +263,7 @@ function formatName(email) {
 </style>
 
 <style lang="scss" scoped>
+@reference "../../style.css";
 
 :deep(.el-popper.is-pure) {
   border-radius: 8px;
@@ -271,7 +272,7 @@ function formatName(email) {
 }
 
 .user-details {
-  @apply bg-[#FFFFFF] dark:bg-[#1E1F20] text-[#1F1F1F] dark:text-[#E3E3E3];
+  @apply bg-layout-card text-primary;
   width: 280px;
   font-size: 14px;
   display: grid;
@@ -311,7 +312,7 @@ function formatName(email) {
       align-items: center;
       gap: 10px;
       font-size: 13px;
-      @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+      @apply text-secondary;
     }
 
     > div:last-child {
@@ -334,7 +335,7 @@ function formatName(email) {
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
-    @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+    @apply text-secondary;
     cursor: pointer;
     font-size: 13px;
     margin-top: 2px;
@@ -443,7 +444,7 @@ function formatName(email) {
 .breadcrumb-item {
   font-weight: 600;
   font-size: 15px;
-  @apply text-[#1F1F1F] dark:text-[#E3E3E3];
+  @apply text-primary;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -500,7 +501,7 @@ function formatName(email) {
     }
 
     .avatar-text {
-      @apply bg-[#FFFFFF] dark:bg-[#1E1F20] text-[#1F1F1F] dark:text-[#E3E3E3] border-[#E0E4EA] dark:border-[#414243];
+      @apply bg-layout-card text-primary border-[#E0E4EA] dark:border-[#414243];
       height: 32px;
       width: 32px;
       display: flex;
@@ -517,7 +518,7 @@ function formatName(email) {
       top: 0;
       margin-right: 10px;
       bottom: 10px;
-      @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+      @apply text-secondary;
     }
   }
 

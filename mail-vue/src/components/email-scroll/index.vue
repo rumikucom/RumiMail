@@ -913,13 +913,14 @@ function loadData() {
 
 </script>
 <style lang="scss" scoped>
+@reference "../../style.css";
 
 .email-container {
   display: grid;
   grid-template-rows: auto 1fr;
   padding: 0;
   font-size: 14px;
-  @apply text-[#1F1F1F] dark:text-[#E3E3E3];
+  @apply text-primary;
   overflow: hidden;
   height: 100%;
   font-family: 'Inter', system-ui, sans-serif;
@@ -947,7 +948,7 @@ function loadData() {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+    @apply text-secondary;
     font-size: 13px;
     letter-spacing: 0.01em;
   }
@@ -963,7 +964,7 @@ function loadData() {
     display: flex;
     justify-content: center;
     align-items: center;
-    @apply bg-[rgba(255,255,255,0.85)] dark:bg-[rgba(0,0,0,0.3)];
+    background: var(--loadding-background);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -988,7 +989,7 @@ function loadData() {
   display: flex;
   padding: 10px 0;
   justify-content: space-between;
-  @apply border-b border-[#E0E4EA] dark:border-[#414243];
+  border-bottom: 1px solid var(--light-border-color);
   cursor: pointer;
   align-items: center;
   position: relative;
@@ -1013,7 +1014,7 @@ function loadData() {
     column-gap: 10px;
     margin-top: 5px;
     margin-bottom: 2px;
-    @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+    @apply text-secondary;
     @media (max-width: 1366px) {
       flex-direction: column;
     }
@@ -1083,7 +1084,7 @@ function loadData() {
     }
 
     .email-sender {
-      @apply text-[#1F1F1F] dark:text-[#E3E3E3];
+      @apply text-primary;
       display: grid;
       grid-template-columns: auto 1fr auto;
 
@@ -1132,7 +1133,7 @@ function loadData() {
       .phone-time {
         font-weight: normal;
         font-size: 12px;
-        @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+        @apply text-secondary;
         letter-spacing: 0.01em;
         @media (min-width: 1367px) {
           display: none;
@@ -1209,7 +1210,7 @@ function loadData() {
         white-space: nowrap;
         text-overflow: ellipsis;
         padding-left: 10px;
-        @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+        @apply text-secondary;
         line-height: 1.5;
         @media (max-width: 1366px) {
           padding-left: 0;
@@ -1227,7 +1228,7 @@ function loadData() {
     display: flex;
     padding-left: 15px;
     align-items: center;
-    @apply text-[#5E5E5E] dark:text-[#9E9E9E];
+    @apply text-secondary;
     letter-spacing: 0.01em;
     @media (max-width: 1366px) {
       display: none;
@@ -1241,7 +1242,7 @@ function loadData() {
   }
 
   &:hover {
-    @apply bg-[#F2F6FC] dark:bg-[#1D1E1F];
+    background-color: var(--email-hover-background);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     z-index: 0;
   }
