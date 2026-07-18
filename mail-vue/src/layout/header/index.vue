@@ -340,7 +340,7 @@ function formatName(email) {
     transition: color 150ms ease;
 
     &:hover {
-      color: #3E86F9;
+      color: #1A73E8;
     }
   }
 
@@ -355,16 +355,16 @@ function formatName(email) {
       border-radius: 6px;
       height: 32px;
       width: 100%;
-      background: #041133;
-      border-color: #041133;
+      background: #1A73E8;
+      border-color: #1A73E8;
       color: #ffffff;
       font-weight: 500;
       font-size: 13px;
       transition: all 200ms ease;
 
       &:hover {
-        background: #0a1d4a;
-        border-color: #0a1d4a;
+        background: #1557B0;
+        border-color: #1557B0;
       }
 
       &:active {
@@ -377,7 +377,7 @@ function formatName(email) {
     margin-top: 20px;
     height: 44px;
     width: 44px;
-    background: #3E86F9;
+    background: #1A73E8;
     color: #ffffff;
     font-size: 18px;
     font-weight: 600;
@@ -397,7 +397,7 @@ function formatName(email) {
   gap: 10px;
   grid-template-columns: auto auto 1fr;
   align-items: center;
-  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .header.not-send {
@@ -416,14 +416,14 @@ function formatName(email) {
     height: 36px;
     border-radius: 50%;
     color: #ffffff;
-    background: #3E86F9;
+    background: #1A73E8;
     transition: all 200ms ease;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      box-shadow: 0 0 0 4px rgba(62, 134, 249, 0.15);
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.15);
     }
 
     &:active {

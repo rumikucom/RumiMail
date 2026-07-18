@@ -38,7 +38,7 @@ body {
 }
 
 html, body {
-    background: var(--el-bg-color);
+    background: #F6F8FC;
 }
 
 ul, ol {
@@ -110,34 +110,34 @@ button, input, select, textarea {
 }
 
 :root {
-    --el-color-primary: #3E86F9;
-    --el-color-primary-dark-2: #2A6AD4;
-    --el-color-primary-light-3: #6BA3FB;
-    --el-color-primary-light-5: #8FBDFC;
-    --el-color-primary-light-7: #B3D4FD;
-    --el-color-primary-light-9: #E8F1FE;
+    --el-color-primary: #1A73E8;
+    --el-color-primary-dark-2: #1557B0;
+    --el-color-primary-light-3: #4D9AEF;
+    --el-color-primary-light-5: #7AB8F5;
+    --el-color-primary-light-7: #A8D4FA;
+    --el-color-primary-light-9: #E8F0FE;
 
-    --extra-light-fill: #FAFCFF;
-    --light-ill: #F5F7FA;
-    --light-border: #E4E7ED;
-    --header-actions-border: inset 0 -1px 0 0 var(--el-border-color-lighter);
-    --aside-backgound: #041133;
-    --loadding-background: rgba(255, 255, 255, 0.8);
-    --dark-border: #CDD0D6;
-    --base-fill: #F0F2F5;
-    --regular-text-color: #585d69;
-    --light-border-color: #e7e9ec;
-    --aside-right-border: 1px 0 3px rgba(4, 17, 51, 0.25);
-    --choose-account-background: var(--el-color-primary-light-8);
-    --el-text-color-regular: var(--el-text-color-primary);
-    --email-scroll-content-color: rgba(25, 41, 59, 0.4);
-    --email-hover-background: #F5F8FD;
+    --extra-light-fill: #F6F8FC;
+    --light-ill: #F6F8FC;
+    --light-border: #E0E4EA;
+    --header-actions-border: inset 0 -1px 0 0 #E0E4EA;
+    --aside-backgound: #F6F8FC;
+    --loadding-background: rgba(255, 255, 255, 0.85);
+    --dark-border: #DADCE0;
+    --base-fill: #EEF1F6;
+    --regular-text-color: #5E5E5E;
+    --light-border-color: #E0E4EA;
+    --aside-right-border: none;
+    --choose-account-background: #C2E7FF;
+    --el-text-color-regular: #1F1F1F;
+    --email-scroll-content-color: #5E5E5E;
+    --email-hover-background: #F2F6FC;
     --login-border: none;
-    --form-desc-color: #71717a;
-    --login-switch-color: #3E86F9;
-    --scrollbar-track-color: #A8ABB2;
-    --base-border-color: #DCDFE6;
-    --secondary-text-color: #909399;
+    --form-desc-color: #5E5E5E;
+    --login-switch-color: #1A73E8;
+    --scrollbar-track-color: #DADCE0;
+    --base-border-color: #E0E4EA;
+    --secondary-text-color: #5E5E5E;
     --message-block-color: rgba(0, 0, 0, 0);
     --loading-hide-transition: all 200ms;
     --vt-x: 50%;

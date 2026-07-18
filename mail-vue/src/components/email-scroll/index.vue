@@ -922,7 +922,7 @@ function loadData() {
   color: var(--el-text-color-primary);
   overflow: hidden;
   height: 100%;
-  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .scroll {
@@ -1189,7 +1189,7 @@ function loadData() {
         height: 20px;
         line-height: 20px;
         font-size: 13px;
-        color: #3E86F9;
+        color: #1A73E8;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -1319,7 +1319,7 @@ function loadData() {
     transition: color 150ms ease;
 
     &:hover {
-      color: #3E86F9;
+      color: #1A73E8;
     }
   }
 
@@ -1362,7 +1362,7 @@ function loadData() {
 .unread {
   height: 7px;
   width: 7px;
-  background: #3E86F9;
+  background: #1A73E8;
   margin-bottom: 2px;
   margin-right: 5px;
   border-radius: 50%;

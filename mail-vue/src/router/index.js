@@ -2,6 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router'
 import NProgress from 'nprogress';
 import {useUiStore} from "@/store/ui.js";
 import {useSettingStore} from "@/store/setting.js";
+import {useUserStore} from "@/store/user.js";
+import i18n from "@/i18n/index.js";
 import {cvtR2Url} from "@/utils/convert.js";
 
 const routes = [
@@ -168,6 +170,23 @@ router.afterEach((to) => {
 
     if (window.innerWidth < 1025) {
         uiStore.asideShow = false
+    }
+
+    // Dynamic browser tab title
+    try {
+        const userStore = useUserStore();
+        const t = i18n.global.t;
+        const routeTitle = to.meta.title ? t(to.meta.title) : '';
+        const userEmail = userStore.user?.email || '';
+        if (routeTitle && userEmail) {
+            document.title = `${routeTitle} - ${userEmail} - RumiMail`;
+        } else if (routeTitle) {
+            document.title = `${routeTitle} - RumiMail`;
+        } else {
+            document.title = 'RumiMail';
+        }
+    } catch (e) {
+        document.title = 'RumiMail';
     }
 
     first = false

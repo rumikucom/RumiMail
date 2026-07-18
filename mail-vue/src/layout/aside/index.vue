@@ -88,12 +88,12 @@ const route = useRoute();
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #ffffff;
+  color: #1F1F1F;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: 'Inter', system-ui, sans-serif;
+  border-bottom: 1px solid #E0E4EA;
   margin-bottom: 8px;
 
   > div {
@@ -104,13 +104,13 @@ const route = useRoute();
 }
 
 .manage-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid #E0E4EA;
   margin: 12px 12px 0 12px;
 }
 
 .manage-title {
   padding: 10px 16px 4px 16px;
-  color: rgba(255, 255, 255, 0.3);
+  color: #5E5E5E;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -119,21 +119,21 @@ const route = useRoute();
 
 .el-menu-item {
   margin: 2px 12px !important;
-  border-radius: 6px;
+  border-radius: 20px;
   height: 42px;
   padding: 0 16px !important;
   display: flex;
   align-items: center;
   gap: 14px;
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #1F1F1F !important;
   transition: all 150ms ease;
-  font-family: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 14px;
 }
 
 .choose-item {
-  background: rgba(62, 134, 249, 0.15) !important;
-  color: #ffffff !important;
+  background: #C2E7FF !important;
+  color: #1F1F1F !important;
   font-weight: 600;
   position: relative;
 }
@@ -145,14 +145,14 @@ const route = useRoute();
   top: 8px;
   bottom: 8px;
   width: 3px;
-  background: #3E86F9;
+  background: #1A73E8;
   border-radius: 0 2px 2px 0;
 }
 
 @media (hover: hover) {
   .el-menu-item:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    color: #ffffff !important;
+    background: #E8EAED !important;
+    color: #1F1F1F !important;
   }
 }
 
@@ -162,15 +162,15 @@ const route = useRoute();
 }
 
 :deep(.el-scrollbar__wrap--hidden-default) {
-  background: #041133 !important;
+  background: #F6F8FC !important;
 }
 
 :deep(.el-menu-item) {
-  background: #041133;
+  background: transparent;
 }
 
 :deep(.el-menu) {
-  background: #041133;
+  background: transparent;
 }
 
 .el-menu {
@@ -180,19 +180,19 @@ const route = useRoute();
 }
 
 :deep(.el-divider__text) {
-  background: #041133;
-  color: #FFFFFF;
+  background: #F6F8FC;
+  color: #1F1F1F;
 }
 
 :deep(.el-scrollbar__bar.is-vertical .el-scrollbar__thumb) {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 :deep(.el-scrollbar__bar.is-horizontal .el-scrollbar__thumb) {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .scroll {
-  background: #041133;
+  background: #F6F8FC;
 }
 </style>
