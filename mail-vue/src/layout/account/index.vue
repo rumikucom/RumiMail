@@ -13,8 +13,8 @@
           </div>
           <div class="opt">
             <div class="send-email" @click.stop>
-              <Icon @click="setAllReceive(item)" v-if="!item.allReceive" icon="material-symbols:mail-rounded" width="22" height="22" color="#fccb1a"/>
-              <Icon @click="setAllReceive(item)" v-else icon="material-symbols:folder-rounded" width="22" height="22" color="#23c4f1" />
+              <Icon @click="setAllReceive(item)" v-if="!item.allReceive" icon="material-symbols:mail-outline-rounded" width="22" height="22" class="text-primary" />
+              <Icon @click="setAllReceive(item)" v-else icon="material-symbols:folder-outline-rounded" width="22" height="22" class="text-primary" />
             </div>
             <div class="settings" @click.stop>
               <Icon icon="material-symbols:content-copy-outline-rounded" width="22" height="22" @click.stop="copyAccount(item.email)"/>
@@ -519,7 +519,7 @@ path[fill="#ffdda1"] {
 .account-box {
 
   border-right: 1px solid var(--el-border-color) !important;
-  background-color: var(--el-bg-color);
+  background-color: var(--bg-main);
   height: 100%;
   overflow: hidden;
 
@@ -578,7 +578,7 @@ path[fill="#ffdda1"] {
   }
 
   .item {
-    background-color: var(--el-bg-color);
+    background-color: var(--bg-card);
     border-radius: 8px;
     padding: 12px 10px;
     margin-bottom: 10px;
