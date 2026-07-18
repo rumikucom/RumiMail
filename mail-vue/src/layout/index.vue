@@ -11,7 +11,7 @@
     ></div>
     <el-container class="main-container bg-layout-main text-primary">
       <el-main>
-        <el-header class="bg-layout-card border-b border-[#E0E4EA] dark:border-[#414243]">
+        <el-header class="bg-layout-card">
             <Header />
         </el-header>
         <Main />
@@ -60,8 +60,6 @@ onBeforeUnmount(() => {
 }
 
 .aside-show {
-  -webkit-box-shadow: var(--aside-right-border);
-  box-shadow: var(--aside-right-border);
   transform: translateX(0);
   transition: all 100ms ease;
   z-index: 101;
@@ -78,6 +76,7 @@ onBeforeUnmount(() => {
 .el-aside {
   width: auto;
   transition: all 100ms ease;
+  border-right: 1px solid var(--border-color);
 }
 
 .layout {
@@ -101,6 +100,7 @@ onBeforeUnmount(() => {
 
 .el-header {
   padding: 0 0 0 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .overlay-show {

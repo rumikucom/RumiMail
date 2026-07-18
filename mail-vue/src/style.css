@@ -10,6 +10,7 @@
   --color-primary: var(--text-main);
   --color-secondary: var(--text-sub);
   --color-active-pill: var(--active-pill);
+  --color-border-main: var(--border-color);
 }
 * {
     margin: 0;
@@ -123,6 +124,7 @@ button, input, select, textarea {
     --text-main: #1F1F1F;
     --text-sub: #5E5E5E;
     --active-pill: #C2E7FF;
+    --border-color: #E0E2E6;
 
     --el-color-primary: #1A73E8;
     --el-color-primary-dark-2: #1557B0;
@@ -166,6 +168,7 @@ button, input, select, textarea {
     --text-main: #E3E3E3;
     --text-sub: #9E9E9E;
     --active-pill: #004B73;
+    --border-color: #333537;
 
     --extra-light-fill: #191919;
     --light-ill: #262727;

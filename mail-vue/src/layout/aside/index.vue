@@ -1,7 +1,7 @@
 <template>
   <el-scrollbar class="scroll bg-layout-card text-primary">
     <div>
-      <div class="title text-primary border-b border-[#E0E4EA] dark:border-[#414243]">
+      <div class="title text-primary">
         <Icon icon="material-symbols:mail-outline-rounded" width="24" height="24" style="color: #3E86F9" />
         <div>RumiMail</div>
       </div>
@@ -31,7 +31,7 @@
           <Icon icon="material-symbols:settings-outline-rounded" width="20" height="20" />
           <span class="menu-name">{{$t('settings')}}</span>
         </el-menu-item>
-        <div class="manage-divider border-t border-[#E0E4EA] dark:border-[#414243]"></div>
+        <div class="manage-divider"></div>
         <div class="manage-title text-secondary" v-perm="['all-email:query','user:query','role:query','setting:query','analysis:query','reg-key:query']">
           <div>{{$t('manage')}}</div>
         </div>
@@ -93,6 +93,7 @@ const route = useRoute();
   letter-spacing: 0.02em;
   font-family: 'Inter', system-ui, sans-serif;
   margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
 
   > div {
     overflow: hidden;
@@ -103,6 +104,7 @@ const route = useRoute();
 
 .manage-divider {
   margin: 12px 12px 0 12px;
+  border-top: 1px solid var(--border-color);
 }
 
 .manage-title {

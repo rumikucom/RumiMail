@@ -501,7 +501,7 @@ function formatName(email) {
     }
 
     .avatar-text {
-      @apply bg-layout-card text-primary border-[#E0E4EA] dark:border-[#414243];
+      @apply bg-layout-card text-primary border-border-main;
       height: 32px;
       width: 32px;
       display: flex;
