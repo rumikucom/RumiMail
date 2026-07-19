@@ -1,9 +1,9 @@
 <p align="center">
     <img src="doc/demo/logo.png" width="80px" />
-    <h1 align="center">Cloud Mail</h1>
-    <p align="center">基于 Cloudflare 的简约响应式邮箱服务，支持邮件发送、附件收发 🎉</p> 
+    <h1 align="center">RumiMail</h1>
+    <p align="center">基于 Cloudflare 的极简高级响应式邮箱服务，支持邮件发送、附件收发 🎉</p> 
     <p align="center">
-        简体中文 | <a href="/README-en.md" style="margin-left: 5px">English </a>
+        简体中文 | <a href="/README.md" style="margin-left: 5px">English </a>
     </p>
     <p align="center">
         <a href="https://github.com/maillab/cloud-mail/tree/main?tab=MIT-1-ov-file" target="_blank" >
@@ -50,9 +50,11 @@
 
 - **💰 低成本使用**： 可部署到 Cloudflare Workers 降低服务器成本
 
-- **💻 响应式设计**：响应式布局自动适配PC和大部分手机端浏览器
+- **💻 响应式设计**：采用极简暗色主题（RumiMail重构），响应式布局自动适配PC和手机端浏览器
 
-- **📧 邮件发送**：集成Resend发送邮件，支持群发，内嵌图片和附件发送，发送状态查看
+- **📧 邮件发送**：集成动态Resend路由发送邮件，支持群发，内嵌图片和附件发送，发送状态查看
+
+- **⚡ 高效缓存**：支持硬刷新缓存策略，确保退出或切换时数据状态实时更新
 
 - **🛡️ 管理员功能**：可以对用户，邮件进行管理，RABC权限控制对功能及使用资源限制
 
@@ -97,7 +99,7 @@
 ## 目录结构
 
 ```
-cloud-mail
+RumiMail
 ├── mail-worker				    # worker后端项目
 │   ├── src                  
 │   │   ├── api	 			    # api接口层			

@@ -1,9 +1,9 @@
 <p align="center">
     <img src="doc/demo/logo.png" width="80px" />
-    <h1 align="center">Cloud Mail</h1>
-    <p align="center">A simple, responsive email service designed to run on Cloudflare Workers 🎉</p> 
+    <h1 align="center">RumiMail</h1>
+    <p align="center">A premium, responsive email service designed to run on Cloudflare Workers 🎉</p> 
     <p align="center">
-       <a href="/README.md" style="margin-left: 5px">简体中文</a> | English 
+       <a href="/README-cn.md" style="margin-left: 5px">简体中文</a> | English 
     </p>
     <p align="center">
         <a href="https://github.com/maillab/cloud-mail/tree/main?tab=MIT-1-ov-file" target="_blank" >
@@ -45,9 +45,11 @@ With only one domain, you can create multiple different email addresses, similar
 
 - **💰 Low-Cost Usage**: No server required — deploy to Cloudflare Workers to reduce costs.
 
-- **💻 Responsive Design**: Automatically adapts to both desktop and most mobile browsers.
+- **💻 Responsive Design**: Features a premium, minimalist, dark-themed UI (RumiMail redesign) that automatically adapts to both desktop and mobile browsers.
 
-- **📧 Email Sending**: Integrated with Resend, supporting bulk email sending and attachments.
+- **📧 Email Sending**: Integrated with dynamic Resend routing, supporting bulk email sending and attachments.
+
+- **⚡ Fast Performance**: Implements hard-reload caching strategies for immediate state updates across sessions.
 
 - **🛡️ Admin Features**: Admin controls for user and email management with RBAC-based access control.
 
@@ -90,7 +92,7 @@ With only one domain, you can create multiple different email addresses, similar
 ## Project Structure
 
 ```
-cloud-mail
+RumiMail
 ├── mail-worker				    # Backend worker project
 │   ├── src                  
 │   │   ├── api	 			    # API layer
