@@ -15,19 +15,6 @@ import aiService from '../service/ai-service';
 export async function email(message, env, ctx) {
 
 	try {
-
-		// Auto-archive: dynamically resolve per-domain backup Gmail from env
-		try {
-			const recipientDomain = message.to.split('@')[1]?.toLowerCase() || '';
-			const backupKey = 'BACKUP_GMAIL_' + recipientDomain.toUpperCase().replace(/\./g, '_');
-			const backupEmail = env[backupKey];
-			if (backupEmail) {
-				await message.forward(backupEmail);
-			}
-		} catch (e) {
-			console.error('Gmail archive forward failed:', e);
-		}
-
 		const {
 			receive,
 			tgChatId,
@@ -79,7 +66,7 @@ export async function email(message, env, ctx) {
 		let userRow = {}
 
 		if (account) {
-			 userRow = await userService.selectByIdIncludeDel({ env: env }, account.userId);
+			userRow = await userService.selectByIdIncludeDel({ env: env }, account.userId);
 		}
 
 		if (account && userRow.email !== env.admin) {
@@ -91,7 +78,7 @@ export async function email(message, env, ctx) {
 				return;
 			}
 
-			if(roleService.isBanEmail(banEmail, email.from.address)) {
+			if (roleService.isBanEmail(banEmail, email.from.address)) {
 				message.setReject('The recipient is disabled from receiving emails.');
 				return;
 			}
@@ -100,7 +87,7 @@ export async function email(message, env, ctx) {
 
 
 		if (!email.to) {
-			email.to = [{ address: message.to, name: emailUtils.getName(message.to)}]
+			email.to = [{ address: message.to, name: emailUtils.getName(message.to) }]
 		}
 
 		const toName = email.to.find(item => item.address === message.to)?.name || '';
@@ -189,6 +176,18 @@ export async function email(message, env, ctx) {
 
 			}));
 
+		}
+
+		// Auto-archive: dynamically resolve per-domain backup Gmail from env
+		try {
+			const recipientDomain = message.to.split('@')[1]?.toLowerCase() || '';
+			const backupKey = 'BACKUP_GMAIL_' + recipientDomain.toUpperCase().replace(/\./g, '_');
+			const backupEmail = env[backupKey];
+			if (backupEmail) {
+				await message.forward(backupEmail);
+			}
+		} catch (e) {
+			console.error('Gmail archive forward failed:', e);
 		}
 
 	} catch (e) {
