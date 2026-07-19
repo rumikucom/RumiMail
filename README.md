@@ -3,28 +3,6 @@
     <h1 align="center">RumiMail</h1>
     <p align="center">A premium, responsive email service designed to run on Cloudflare Workers 🎉</p> 
     <p align="center">
-       <a href="/README-cn.md" style="margin-left: 5px">简体中文</a> | English 
-    </p>
-    <p align="center">
-        <a href="https://github.com/maillab/cloud-mail/tree/main?tab=MIT-1-ov-file" target="_blank" >
-            <img src="https://img.shields.io/badge/license-MIT-green" />
-        </a>    
-        <a href="https://github.com/maillab/cloud-mail/releases" target="_blank" >
-            <img src="https://img.shields.io/github/v/release/maillab/cloud-mail" alt="releases" />
-        </a>  
-        <a href="https://github.com/maillab/cloud-mail/issues" >
-            <img src="https://img.shields.io/github/issues/maillab/cloud-mail" alt="issues" />
-        </a>  
-        <a href="https://github.com/maillab/cloud-mail/stargazers" target="_blank">
-            <img src="https://img.shields.io/github/stars/maillab/cloud-mail" alt="stargazers" />
-        </a>  
-        <a href="https://github.com/maillab/cloud-mail/forks" target="_blank" >
-            <img src="https://img.shields.io/github/forks/maillab/cloud-mail" alt="forks" />
-        </a>
-    </p>
-    <p align="center">
-        <a href="https://trendshift.io/repositories/20459" target="_blank" >
-            <img src="https://trendshift.io/api/badge/repositories/20459" alt="trendshift" >
         </a>
     </p>
 </p>
@@ -43,31 +21,31 @@ With only one domain, you can create multiple different email addresses, similar
 
 ## Features
 
-- **💰 Low-Cost Usage**: No server required — deploy to Cloudflare Workers to reduce costs.
+- ** Low-Cost Usage**: No server required — deploy to Cloudflare Workers to reduce costs.
 
-- **💻 Responsive Design**: Features a premium, minimalist, dark-themed UI (RumiMail redesign) that automatically adapts to both desktop and mobile browsers.
+- ** Responsive Design**: Features a premium, minimalist, dark-themed UI (RumiMail redesign) that automatically adapts to both desktop and mobile browsers.
 
-- **📧 Email Sending**: Integrated with dynamic Resend routing, supporting bulk email sending and attachments.
+- ** Email Sending**: Integrated with dynamic Resend routing, supporting bulk email sending and attachments.
 
-- **⚡ Fast Performance**: Implements hard-reload caching strategies for immediate state updates across sessions.
+- ** Fast Performance**: Implements hard-reload caching strategies for immediate state updates across sessions.
 
-- **🛡️ Admin Features**: Admin controls for user and email management with RBAC-based access control.
+- ** Admin Features**: Admin controls for user and email management with RBAC-based access control.
 
-- **📦 Attachment Support**: Send and receive attachments, stored and downloaded via R2 object storage.
+- ** Attachment Support**: Send and receive attachments, stored and downloaded via R2 object storage.
 
-- **🔔 Email Push**: Forward received emails to Telegram bots or other email providers.
+- ** Email Push**: Forward received emails to Telegram bots or other email providers.
 
-- **📡 Open API**: Supports batch user creation via API and multi-condition email queries
+- ** Open API**: Supports batch user creation via API and multi-condition email queries
 
-- **🔢 Verification Code Recognition**: Auto-detect codes via Workers AI
+- ** Verification Code Recognition**: Auto-detect codes via Workers AI
 
-- **📈 Data Visualization**: Use ECharts to visualize system data, including user email growth.
+- ** Data Visualization**: Use ECharts to visualize system data, including user email growth.
 
-- **🎨 Personalization**: Customize website title, login background, and transparency.
+- ** Personalization**: Customize website title, login background, and transparency.
 
-- **🤖 CAPTCHA**: Integrated with Turnstile CAPTCHA to prevent automated registration.
+- ** CAPTCHA**: Integrated with Turnstile CAPTCHA to prevent automated registration.
 
-- **📜 More Features**: Under development...
+- ** More Features**: Under development...
 
 ## Tech Stack
 
@@ -134,17 +112,3 @@ RumiMail
 └── └── env.release				# Environment configuration
 
 ```
-
-## Sponsor
-
-<a href="https://doc.skymail.ink/support.html">
-<img width="170px" src="./doc/images/support.png" alt="">
-</a>
-
-## License
-
-This project is licensed under the [MIT](LICENSE) license.
-
-## Communication
-
-[Telegram](https://t.me/cloud_mail_tg)
