@@ -1,5 +1,4 @@
 import axios from "axios";
-import router from "@/router";
 import i18n from "@/i18n/index.js";
 import {useSettingStore} from "@/store/setting.js";
 
@@ -34,7 +33,8 @@ http.interceptors.response.use((res) => {
                     repeatNum: -4,
                 })
                 localStorage.removeItem('token')
-                router.replace('/login')
+                // Force full reload to discard stale cached state
+                window.location.href = '/login'
                 reject(data)
             } else if (data.code === 403) {
                 ElMessage({

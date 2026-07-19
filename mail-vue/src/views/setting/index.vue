@@ -147,7 +147,8 @@ const deleteConfirm = () => {
   }).then(() => {
     userDelete().then(() => {
       localStorage.removeItem('token');
-      router.replace('/login');
+      // Force full reload to discard stale cached state
+      window.location.href = '/login';
       ElMessage({
         message: t('delSuccessMsg'),
         type: 'success',

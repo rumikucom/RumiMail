@@ -388,7 +388,8 @@ async function sendEmail() {
     })
     if (e.code === 401) {
       localStorage.removeItem('token');
-      router.replace('/login');
+      // Force full reload to discard stale cached state
+      window.location.href = '/login';
     }
     show.value = true
     addRecipientRecord();

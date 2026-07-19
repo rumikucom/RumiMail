@@ -244,7 +244,12 @@ function clickLogout() {
   logoutLoading.value = true
   logout().then(() => {
     localStorage.removeItem("token")
-    router.replace('/login')
+    // Force a full page reload to discard all in-memory state and cached assets
+    window.location.href = '/login'
+  }).catch(() => {
+    // Even if the API call fails, still clear session and hard-redirect
+    localStorage.removeItem("token")
+    window.location.href = '/login'
   }).finally(() => {
     logoutLoading.value = false
   })

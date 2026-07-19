@@ -37,6 +37,9 @@ export default defineConfig(({mode}) => {
                     runtimeCaching: [],
                     navigateFallback: null,
                     cleanupOutdatedCaches: true,
+                    // Immediately activate new service worker on deploy
+                    skipWaiting: true,
+                    clientsClaim: true,
                 }
             }),
             AutoImport({
@@ -55,7 +58,15 @@ export default defineConfig(({mode}) => {
             target: 'es2022',
             outDir: env.VITE_OUT_DIR || 'dist',
             emptyOutDir: true,
-            assetsInclude: ['**/*.json']
+            assetsInclude: ['**/*.json'],
+            rollupOptions: {
+                output: {
+                    // Explicit content-hash filenames for aggressive cache busting
+                    entryFileNames: 'assets/[name]-[hash].js',
+                    chunkFileNames: 'assets/[name]-[hash].js',
+                    assetFileNames: 'assets/[name]-[hash].[ext]',
+                }
+            }
         }
     }
 })
