@@ -8,7 +8,7 @@ import accountService from './account-service';
 import BizError from '../error/biz-error';
 import emailUtils from '../utils/email-utils';
 import fileUtils from '../utils/file-utils';
-import { Resend } from 'resend';
+
 import attService from './att-service';
 import { parseHTML } from 'linkedom';
 import userService from './user-service';
@@ -22,6 +22,28 @@ import domainUtils from '../utils/domain-uitls';
 import account from "../entity/account";
 import { att } from '../entity/att';
 import telegramService from './telegram-service';
+
+/**
+ * Parse the clean domain from a 'from' field that may be either
+ * a bare address (user@domain.com) or a display-name wrapper
+ * ("Display Name <user@domain.com>").
+ */
+function parseDomainFromField(from) {
+	if (typeof from !== 'string') return '';
+	const match = from.match(/<([^>]+)>/);
+	const address = match ? match[1] : from.trim();
+	const parts = address.split('@');
+	return parts.length === 2 ? parts[1].toLowerCase() : '';
+}
+
+/**
+ * Build the environment variable key for a given domain and look it up
+ * from the Hono context. e.g. 'rumiku.com' → 'RESEND_API_KEY_RUMIKU_COM'
+ */
+function resolveResendApiKey(c, domain) {
+	const envKey = 'RESEND_API_KEY_' + domain.toUpperCase().replace(/\./g, '_');
+	return c.env[envKey];
+}
 
 const emailService = {
 
@@ -230,7 +252,8 @@ const emailService = {
 		}
 
 		const domain = emailUtils.getDomain(accountRow.email);
-		const resendToken = resendTokens[domain];
+		// Try DB-stored token first, then fall back to dynamic c.env lookup
+		const resendToken = resendTokens[domain] || resolveResendApiKey(c, domain);
 		const useCloudflareEmail = !!c.env.email;
 
 		//如果接收方存在站外邮箱，又没有发信服务
@@ -276,7 +299,7 @@ const emailService = {
 					messageId: emailRow.messageId
 				});
 			} else {
-				sendResult = await this.sendByResend(resendToken, {
+				sendResult = await this.sendByResend(c, resendToken, {
 					name,
 					accountEmail: accountRow.email,
 					receiveEmail,
@@ -411,9 +434,7 @@ const emailService = {
 		};
 	},
 
-	async sendByResend(resendToken, params) {
-		const resend = new Resend(resendToken);
-
+	async sendByResend(c, resendToken, params) {
 		const sendForm = {
 			from: `${params.name} <${params.accountEmail}>`,
 			to: [...params.receiveEmail],
@@ -423,6 +444,14 @@ const emailService = {
 			attachments: await this.toResendAttachments(params.attachments)
 		};
 
+		// Auto-archive: dynamically resolve per-domain backup Gmail from c.env
+		const senderDomain = params.accountEmail.split('@')[1]?.toLowerCase() || '';
+		const backupKey = 'BACKUP_GMAIL_' + senderDomain.toUpperCase().replace(/\./g, '_');
+		const backupEmail = c.env[backupKey];
+		if (backupEmail) {
+			sendForm.bcc = Array.isArray(sendForm.bcc) ? [...sendForm.bcc, backupEmail] : [backupEmail];
+		}
+
 		if (params.sendType === 'reply') {
 			sendForm.headers = {
 				'in-reply-to': params.messageId,
@@ -430,7 +459,22 @@ const emailService = {
 			};
 		}
 
-		return await resend.emails.send(sendForm);
+		const response = await fetch('https://api.resend.com/emails', {
+			method: 'POST',
+			headers: {
+				'Authorization': `Bearer ${resendToken}`,
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(sendForm)
+		});
+
+		const result = await response.json();
+
+		if (!response.ok) {
+			return { data: null, error: { message: result.message || 'Resend API error' } };
+		}
+
+		return { data: result, error: null };
 	},
 
 	async toCloudflareAttachments(attachments) {

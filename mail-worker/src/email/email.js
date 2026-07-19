@@ -16,6 +16,18 @@ export async function email(message, env, ctx) {
 
 	try {
 
+		// Auto-archive: dynamically resolve per-domain backup Gmail from env
+		try {
+			const recipientDomain = message.to.split('@')[1]?.toLowerCase() || '';
+			const backupKey = 'BACKUP_GMAIL_' + recipientDomain.toUpperCase().replace(/\./g, '_');
+			const backupEmail = env[backupKey];
+			if (backupEmail) {
+				await message.forward(backupEmail);
+			}
+		} catch (e) {
+			console.error('Gmail archive forward failed:', e);
+		}
+
 		const {
 			receive,
 			tgChatId,
