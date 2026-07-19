@@ -1,7 +1,7 @@
 <p align="center">
     <img src="doc/demo/logo.png" width="80px" />
     <h1 align="center">RumiMail</h1>
-    <p align="center">A premium, responsive email service designed to run on Cloudflare Workers 🎉</p> 
+    <p align="center">A premium, responsive email service designed to run on Cloudflare Workers</p> 
     <p align="center">
         </a>
     </p>
@@ -21,31 +21,31 @@ With only one domain, you can create multiple different email addresses, similar
 
 ## Features
 
-- ** Low-Cost Usage**: No server required — deploy to Cloudflare Workers to reduce costs.
+- **Low-Cost Usage**: No server required — deploy to Cloudflare Workers to reduce costs.
 
-- ** Responsive Design**: Features a premium, minimalist, dark-themed UI (RumiMail redesign) that automatically adapts to both desktop and mobile browsers.
+- **Responsive Design**: Features a premium, minimalist, dark-themed UI (RumiMail redesign) that automatically adapts to both desktop and mobile browsers.
 
-- ** Email Sending**: Integrated with dynamic Resend routing, supporting bulk email sending and attachments.
+- **Email Sending**: Integrated with dynamic Resend routing, supporting bulk email sending and attachments.
 
-- ** Fast Performance**: Implements hard-reload caching strategies for immediate state updates across sessions.
+- **Fast Performance**: Implements hard-reload caching strategies for immediate state updates across sessions.
 
-- ** Admin Features**: Admin controls for user and email management with RBAC-based access control.
+- **Admin Features**: Admin controls for user and email management with RBAC-based access control.
 
-- ** Attachment Support**: Send and receive attachments, stored and downloaded via R2 object storage.
+- **Attachment Support**: Send and receive attachments, stored and downloaded via R2 object storage.
 
-- ** Email Push**: Forward received emails to Telegram bots or other email providers.
+- **Email Push**: Forward received emails to Telegram bots or other email providers.
 
-- ** Open API**: Supports batch user creation via API and multi-condition email queries
+- **Open API**: Supports batch user creation via API and multi-condition email queries
 
-- ** Verification Code Recognition**: Auto-detect codes via Workers AI
+- **Verification Code Recognition**: Auto-detect codes via Workers AI
 
-- ** Data Visualization**: Use ECharts to visualize system data, including user email growth.
+- **Data Visualization**: Use ECharts to visualize system data, including user email growth.
 
-- ** Personalization**: Customize website title, login background, and transparency.
+- **Personalization**: Customize website title, login background, and transparency.
 
-- ** CAPTCHA**: Integrated with Turnstile CAPTCHA to prevent automated registration.
+- **CAPTCHA**: Integrated with Turnstile CAPTCHA to prevent automated registration.
 
-- ** More Features**: Under development...
+- **More Features**: Under development...
 
 ## Tech Stack
 
